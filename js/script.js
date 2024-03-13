@@ -45,12 +45,12 @@ createApp({
         },
         {
           text: 'studiare',
-          done: true,
+          done: false,
         },
       ],
       newTask:{
         text:'',
-        isDone: false
+        done: false
       },
     }
   },
@@ -63,7 +63,7 @@ createApp({
     // 3b
       this.newTask = {
         text:'',
-        isDone: false
+        done: false
       }
     }
   },
