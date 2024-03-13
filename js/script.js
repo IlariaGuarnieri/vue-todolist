@@ -48,7 +48,10 @@ createApp({
           done: true
         },
       ],
-      newTask:'',
+      newTask:{
+        text:'',
+        done: false
+      },
       // a
       errorMsg:''
     }
@@ -57,16 +60,16 @@ createApp({
   methods: {
     addTask(){
       // c
-      if(this.newTask.length > 5){
-     // console.log('add')
+      // if(this.newTask.length > 5){
+    console.log('this.newTask')
     //  2b
     this.todoList.unshift(this.newTask)
     // 3b
     this.newTask = ''
-    this.errorMsg = ''
-      }else{
-        this.errorMsg = 'Attenzione! Il testo deve avere almeno 5 caratteri!'
-      }
+    // this.errorMsg = ''
+      // }else{
+      //   this.errorMsg = 'Attenzione! Il testo deve avere almeno 5 caratteri!'
+      // }
 
     }
   },
