@@ -15,8 +15,14 @@
 
 // AGGIUNTA DI UN TODO
 // 1b creo un data (stringa) da associare al v-model dell'input
-// 2b al keyup.enter dell'input e al click del bottone push della variabile temporanea nel todo
+// 2b al keyup.enter dell'input e al click del bottone unshift(ovvero metto per primo il testo che immetto) della variabile temporanea nel todo
 // 3b resetto la variabile temporanea
+
+// GESTIONE ERRORE INSERIMENTO
+// a creare un data(stringa) messaggio errore
+// b in add task mettere un controllo su  imput vuoto
+// c se la stringa <  5 caratterivalorizzare la variabile errormsg con messaggio appropriato
+// daltrimenti come in 2b e reset
 
 // ELIMINAZIONE TODO
 // 1c al @click del cestino--> zuncione elimina task passando come parametro l'indice della task da eliminare
@@ -34,17 +40,26 @@ createApp({
           done: true
         },
       ],
-      newTask:''
+      newTask:'',
+      // a
+      errorMsg:''
     }
   },
 
   methods: {
     addTask(){
+      // c
+      if(this.newTask.length > 5){
      // console.log('add')
     //  2b
     this.todoList.unshift(this.newTask)
     // 3b
     this.newTask = ''
+    this.errorMsg = ''
+      }else{
+        this.errorMsg = 'Attenzione! Il testo deve avere almeno 5 caratteri!'
+      }
+
     }
   },
 }).mount('#app')
