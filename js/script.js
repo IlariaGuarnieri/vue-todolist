@@ -48,7 +48,6 @@ createApp({
           done: true,
         },
       ],
-      newTask:'',
       newTask:{
         text:'',
         isDone: false
@@ -62,7 +61,10 @@ createApp({
     //  2b
       this.todoList.unshift(this.newTask)
     // 3b
-      this.newTask = ''
+      this.newTask = {
+        text:'',
+        isDone: false
+      }
     }
   },
 }).mount('#app')
