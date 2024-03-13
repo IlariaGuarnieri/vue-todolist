@@ -39,6 +39,14 @@ createApp({
           text: 'fare la spesa',
           done: true
         },
+        {
+          text: 'pagare le bollette',
+          done: true
+        },
+        {
+          text: 'studiare',
+          done: true
+        },
       ],
       newTask:'',
       // a
