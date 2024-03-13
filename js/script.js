@@ -2,7 +2,7 @@
 // - text, una stringa che indica il testo del todo
 // - done, un booleano (true/false) che indica se il todo è stato fatto oppure no
 // 1. MILESTONE 1
-// Stampare all’interno di una lista HTML un item per ogni todo.
+// Stampare all’interno di una lista HTML un item per ogni todo. ok
 // Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
 // 2. MILESTONE 2
 // Visualizzare a fianco ad ogni item ha una “x”: cliccando su di essa, il todo viene rimosso dalla lista.
@@ -37,40 +37,32 @@ createApp({
       todoList:[
         {
           text: 'fare la spesa',
-          done: true
+          done: true,
         },
         {
           text: 'pagare le bollette',
-          done: true
+          done: true,
         },
         {
           text: 'studiare',
-          done: true
+          done: true,
         },
       ],
+      newTask:'',
       newTask:{
         text:'',
-        done: false
+        isDone: false
       },
-      // a
-      errorMsg:''
     }
   },
 
   methods: {
     addTask(){
-      // c
-      // if(this.newTask.length > 5){
-    console.log('this.newTask')
+      console.log(this.newTask)
     //  2b
-    this.todoList.unshift(this.newTask)
+      this.todoList.unshift(this.newTask)
     // 3b
-    this.newTask = ''
-    // this.errorMsg = ''
-      // }else{
-      //   this.errorMsg = 'Attenzione! Il testo deve avere almeno 5 caratteri!'
-      // }
-
+      this.newTask = ''
     }
   },
 }).mount('#app')

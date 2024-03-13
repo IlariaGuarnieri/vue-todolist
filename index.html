@@ -37,20 +37,19 @@
       >
 
       <button @click="addTask" >Aggiungi</button>
-      <!-- <p class="error">{{errorMsg}}</p> -->
+      <p class="error"></p>
     </div>
 
     <div class="task-container">
+      
       <ul>
         <!-- 2a -->
         <li v-for="(task, indice) in todoList">
-          <span>{{task.text}}</span>
+          <span>.{{task.text}}</span>
           <i class="fa-solid fa-trash-can"></i>
         </li>
-
-        
-
       </ul>
+
     </div>
 
 
