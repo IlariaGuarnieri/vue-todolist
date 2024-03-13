@@ -32,14 +32,19 @@ createApp({
         {
           text: 'fare la spesa',
           done: true
-        }
+        },
       ],
       newTask:''
     }
   },
+
   methods: {
     addTask(){
-      console.log('add')
+     // console.log('add')
+    //  2b
+    this.todoList.unshift(this.newTask)
+    // 3b
+    this.newTask = ''
     }
   },
 }).mount('#app')

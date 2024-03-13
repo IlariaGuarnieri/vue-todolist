@@ -36,7 +36,7 @@
       @keyup.enter="addTask"
       >
 
-      <button @click="addTask">Aggiungi</button>
+      <button @click="addTask" >Aggiungi</button>
       <p class="error"></p>
     </div>
 
@@ -44,7 +44,8 @@
       <ul>
         <!-- 2a -->
         <li v-for="(task, indice) in todoList">
-          <span>{{task}}</span>
+          <span>{{task.text}}</span>
+          <span>{{newTask}}</span>
           <i class="fa-solid fa-trash-can"></i>
         </li>
 
