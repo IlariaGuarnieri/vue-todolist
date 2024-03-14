@@ -52,18 +52,39 @@ createApp({
         text:'',
         done: false
       },
+      errorMsg: '',
+
     }
   },
 
   methods: {
     addTask(){
-      console.log(this.newTask)
-    //  2b
-      this.todoList.unshift(this.newTask)
-    // 3b
-      this.newTask = {
-        text:'',
-        done: false
+      // console.log(this.newTask)
+      if(this.newTask.length > 5){
+            //  2b
+            // creo un nuovo oggetto da inserire nell'array dei task
+            const newTaskT ={
+              text: this.newTask,
+              done: false
+            }
+        this.todoList.unshift(this.newTaskT)
+        // 3b
+        this.newTask = ''
+        this.errorMsg = '';
+      }else{
+        this.errorMsg= 'attenzione il testo deve avere piu di 5 caratteri'
+      }
+    },
+    toggleDone(task){
+      task.done = !task.done;
+      this.errorMsg= '';
+    },
+
+    eliminaTask(indice){
+      if(this.todoList[indice].done){
+        this.todoList.splice(indice,1)
+      }else{
+        this.errorMsg = 'attenzione! prima va eseguito il task!'
       }
     }
   },

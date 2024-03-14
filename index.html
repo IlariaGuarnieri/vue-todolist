@@ -39,16 +39,21 @@
       >
 
       <button @click="addTask" >Aggiungi</button>
-      <p class="error"></p>
+      <p class="error">{{errorMsg}}</p>
     </div>
 
     <div class="task-container">
       
       <ul>
         <!-- 2a -->
-        <li v-for="(task, indice) in todoList">
-          <span :class="{'text-decoration-line-through' : task.done == true}">{{task.text}}</span>
-          <i class="fa-solid fa-trash-can"></i>
+        <li 
+        v-for="(task, indice) in todoList"
+        :class="{'done' : task.done}"
+        @click="toggleDone(task)">
+        <!-- con questo :class="{'done' : task.done}"> classe di un oggetto -->
+        <!-- con questo @click="task.done=!task.done"> al click task.done se è true diventa false, se è false diventa true LHO POI CAMBIATO CON @click="toggleDone(task)" COSI HO PASSATO LA FUNZIONE CREATA-->
+          <span>{{task.text}}</span>
+          <i @click.stop="eliminaTask(indice)" class="fa-solid fa-trash-can"></i>
         </li>
       </ul>
 
